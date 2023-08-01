@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contenido %}
+
+<center>
+    <br>
+    <br>
+    <a id="boton_post" href="{% url 'apps.posts:add_post' %}">
+        <button class="btn btn-secondary">CREAR NOTICIA</button>
+    </a>
+</center>
+
+    {% for i in posts %}
+
+    <div class="card" style="width: 14rem; margin: 100px;">
+        <img src="{{ posts.imagen.url }}" class="card-img-top" alt="">
+        <div class="card-body">
+            <h5 class="card-title">{{ i.titulo }}</h5>
+            <p class="card-text">{{ i.categoria }} // {{ i.fecha }}</p>
+            <a id="boton_post" href="{% url 'apps.posts:individual_post' i.id %}">
+                <button class="btn btn-secondary">Ver noticia</button>
+            </a>
+        </div>
+    </div>   
+
+    {% endfor %}
+    
+{% endblock %}

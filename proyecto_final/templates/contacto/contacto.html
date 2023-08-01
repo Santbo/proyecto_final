@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contenido %}
+
+<center>
+    <form method="POST" style="margin: 200px;">
+        <h1>Formulario de Contacto</h1>
+        <br>
+        <table>
+            {% csrf_token %}
+            {{ form }}
+        </table>
+        <input type="submit" value="enviar">
+    </form>
+</center>
+
+{% endblock %}

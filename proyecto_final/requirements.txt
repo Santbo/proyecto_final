@@ -1,0 +1,4 @@
+virtualenv==20.24.0
+django==4.2.3   
+pillow==10.0.0
+mysqlclient==2.2.0

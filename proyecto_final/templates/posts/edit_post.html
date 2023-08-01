@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Editar Noticia {% endblock %}
+
+{% block contenido %}
+
+<center>
+    <div class="form-group">
+        <table>
+        <form method="POST">
+            {% csrf_token %}
+            <br></br>
+                <h1>Actualizar Noticia</h1>
+            <br></br>
+            {{ form.as_table }}
+        </table>
+            <br>
+            <a id="boton_post" href="{% url 'apps.posts:edit_post' id=posts.id %}"></a>
+                <button class="btn btn-secondary">Actualizar</button>
+                <a class="btn btn-secondary" href="{% url 'apps.posts:individual_post' id=posts.id %}">Cancelar</a>
+            <br></br>
+        </form>
+    </div>
+</center>
+
+{% endblock %}

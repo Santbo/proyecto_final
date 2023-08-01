@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Agregar Noticia {% endblock %}
+
+{% block contenido %}
+
+<center>
+    <table>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <br></br>
+                <h1>Crea tu Noticia</h1>
+            <br></br>
+            {{ form.as_table }}
+    </table>
+    <br>
+        <button class="btn btn-secondary">Publicar</button>
+        <a class="btn btn-secondary" href="{% url 'apps.posts:posts' %}">Cancelar</a>
+    <br>
+    <br>
+</center>
+
+
+{% endblock %}

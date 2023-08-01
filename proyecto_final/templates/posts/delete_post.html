@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Borrar noticia {% endblock %}
+
+{% block contenido %}
+
+<center>
+    <form method="POST" style="margin: 200px;">
+        <h1>Eliminar la siguiente noticia: {{ Post.titulo }}</h1>
+        <div class="form-group">
+            {% csrf_token %}
+            <strong>¿Seguro deseas eliminar esta noticia?</strong>
+            <button class="btn btn-secondary">Eliminar</button>
+            <a class="btn btn-secondary" href="{% url 'apps.posts:individual_post' id=posts.id %}">Cancelar</a>
+        </div>
+    </form>
+</center>
+
+{% endblock %}
